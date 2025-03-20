@@ -14,6 +14,7 @@ headers = {
 
 try :
  response=requests.get(url,headers=headers)
+ response.raise_for_status()
  soup=BeautifulSoup(response.text,'html.parser')
  print('Link Fetched Successfully')
 except Exception as e :
